@@ -16,6 +16,10 @@
 		FA2CEF6B27789A0D00F886C7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CEF6A27789A0D00F886C7 /* Model.swift */; };
 		FA2CEF6E2778F20500F886C7 /* RegularTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CEF6D2778F20500F886C7 /* RegularTableViewCell.swift */; };
 		FA2CEF70277903F400F886C7 /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CEF6F277903F400F886C7 /* CustomHeaderView.swift */; };
+		FA2CEF73277BABEF00F886C7 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CEF71277BABEE00F886C7 /* MyCollectionViewCell.swift */; };
+		FA2CEF74277BABEF00F886C7 /* MyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA2CEF72277BABEE00F886C7 /* MyCollectionViewCell.xib */; };
+		FA2CEF78277BAE7700F886C7 /* CollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CEF76277BAE7700F886C7 /* CollectionTableViewCell.swift */; };
+		FA2CEF79277BAE7700F886C7 /* CollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA2CEF77277BAE7700F886C7 /* CollectionTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		FA2CEF6A27789A0D00F886C7 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		FA2CEF6D2778F20500F886C7 /* RegularTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularTableViewCell.swift; sourceTree = "<group>"; };
 		FA2CEF6F277903F400F886C7 /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
+		FA2CEF71277BABEE00F886C7 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA2CEF72277BABEE00F886C7 /* MyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCollectionViewCell.xib; sourceTree = "<group>"; };
+		FA2CEF76277BAE7700F886C7 /* CollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCell.swift; sourceTree = "<group>"; };
+		FA2CEF77277BAE7700F886C7 /* CollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +125,7 @@
 		FA2CEF682777E89B00F886C7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				FA2CEF75277BAC2300F886C7 /* Nibs */,
 				FA2CEF6C2778A92400F886C7 /* Cells */,
 				FA2CEF532777E44200F886C7 /* ViewController.swift */,
 			);
@@ -136,8 +145,19 @@
 			children = (
 				FA2CEF6D2778F20500F886C7 /* RegularTableViewCell.swift */,
 				FA2CEF6F277903F400F886C7 /* CustomHeaderView.swift */,
+				FA2CEF71277BABEE00F886C7 /* MyCollectionViewCell.swift */,
+				FA2CEF76277BAE7700F886C7 /* CollectionTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		FA2CEF75277BAC2300F886C7 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				FA2CEF72277BABEE00F886C7 /* MyCollectionViewCell.xib */,
+				FA2CEF77277BAE7700F886C7 /* CollectionTableViewCell.xib */,
+			);
+			path = Nibs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,8 +217,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA2CEF79277BAE7700F886C7 /* CollectionTableViewCell.xib in Resources */,
 				FA2CEF5C2777E44600F886C7 /* LaunchScreen.storyboard in Resources */,
 				FA2CEF592777E44600F886C7 /* Assets.xcassets in Resources */,
+				FA2CEF74277BABEF00F886C7 /* MyCollectionViewCell.xib in Resources */,
 				FA2CEF572777E44200F886C7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,11 +233,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA2CEF542777E44200F886C7 /* ViewController.swift in Sources */,
+				FA2CEF73277BABEF00F886C7 /* MyCollectionViewCell.swift in Sources */,
 				FA2CEF6E2778F20500F886C7 /* RegularTableViewCell.swift in Sources */,
 				FA2CEF502777E44200F886C7 /* AppDelegate.swift in Sources */,
 				FA2CEF522777E44200F886C7 /* SceneDelegate.swift in Sources */,
 				FA2CEF70277903F400F886C7 /* CustomHeaderView.swift in Sources */,
 				FA2CEF6B27789A0D00F886C7 /* Model.swift in Sources */,
+				FA2CEF78277BAE7700F886C7 /* CollectionTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

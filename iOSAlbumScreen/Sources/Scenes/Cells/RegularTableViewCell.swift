@@ -52,7 +52,6 @@ class RegularTableViewCell: UITableViewCell {
                             width: iconHeight,
                             height: iconHeight)
 
-//        icon.clipsToBounds = true
 
         label.frame = CGRect(x: iconHeight + 18,
                              y: 0,
