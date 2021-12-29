@@ -13,6 +13,13 @@
 		FA2CEF572777E44200F886C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2CEF552777E44200F886C7 /* Main.storyboard */; };
 		FA2CEF592777E44600F886C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA2CEF582777E44600F886C7 /* Assets.xcassets */; };
 		FA2CEF5C2777E44600F886C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2CEF5A2777E44600F886C7 /* LaunchScreen.storyboard */; };
+		FA2CEF6B27789A0D00F886C7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CEF6A27789A0D00F886C7 /* Model.swift */; };
+		FA2CEF6E2778F20500F886C7 /* RegularTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CEF6D2778F20500F886C7 /* RegularTableViewCell.swift */; };
+		FA2CEF70277903F400F886C7 /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CEF6F277903F400F886C7 /* CustomHeaderView.swift */; };
+		FA2CEF73277BABEF00F886C7 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CEF71277BABEE00F886C7 /* MyCollectionViewCell.swift */; };
+		FA2CEF74277BABEF00F886C7 /* MyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA2CEF72277BABEE00F886C7 /* MyCollectionViewCell.xib */; };
+		FA2CEF78277BAE7700F886C7 /* CollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CEF76277BAE7700F886C7 /* CollectionTableViewCell.swift */; };
+		FA2CEF79277BAE7700F886C7 /* CollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA2CEF77277BAE7700F886C7 /* CollectionTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,13 @@
 		FA2CEF582777E44600F886C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA2CEF5B2777E44600F886C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA2CEF5D2777E44600F886C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA2CEF6A27789A0D00F886C7 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		FA2CEF6D2778F20500F886C7 /* RegularTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularTableViewCell.swift; sourceTree = "<group>"; };
+		FA2CEF6F277903F400F886C7 /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
+		FA2CEF71277BABEE00F886C7 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA2CEF72277BABEE00F886C7 /* MyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCollectionViewCell.xib; sourceTree = "<group>"; };
+		FA2CEF76277BAE7700F886C7 /* CollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCell.swift; sourceTree = "<group>"; };
+		FA2CEF77277BAE7700F886C7 /* CollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +70,94 @@
 		FA2CEF4E2777E44200F886C7 /* iOSAlbumScreen */ = {
 			isa = PBXGroup;
 			children = (
-				FA2CEF4F2777E44200F886C7 /* AppDelegate.swift */,
-				FA2CEF512777E44200F886C7 /* SceneDelegate.swift */,
-				FA2CEF532777E44200F886C7 /* ViewController.swift */,
-				FA2CEF552777E44200F886C7 /* Main.storyboard */,
-				FA2CEF582777E44600F886C7 /* Assets.xcassets */,
-				FA2CEF5A2777E44600F886C7 /* LaunchScreen.storyboard */,
-				FA2CEF5D2777E44600F886C7 /* Info.plist */,
+				FA2CEF642777E84300F886C7 /* Resources */,
+				FA2CEF632777E82E00F886C7 /* Sources */,
 			);
 			path = iOSAlbumScreen;
+			sourceTree = "<group>";
+		};
+		FA2CEF632777E82E00F886C7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				FA2CEF69277899F900F886C7 /* Model */,
+				FA2CEF682777E89B00F886C7 /* Scenes */,
+				FA2CEF672777E87D00F886C7 /* App */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		FA2CEF642777E84300F886C7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FA2CEF662777E86E00F886C7 /* Configs */,
+				FA2CEF652777E85700F886C7 /* Storyboards */,
+				FA2CEF582777E44600F886C7 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FA2CEF652777E85700F886C7 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FA2CEF552777E44200F886C7 /* Main.storyboard */,
+				FA2CEF5A2777E44600F886C7 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FA2CEF662777E86E00F886C7 /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				FA2CEF5D2777E44600F886C7 /* Info.plist */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
+		FA2CEF672777E87D00F886C7 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FA2CEF4F2777E44200F886C7 /* AppDelegate.swift */,
+				FA2CEF512777E44200F886C7 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FA2CEF682777E89B00F886C7 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				FA2CEF75277BAC2300F886C7 /* Nibs */,
+				FA2CEF6C2778A92400F886C7 /* Cells */,
+				FA2CEF532777E44200F886C7 /* ViewController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		FA2CEF69277899F900F886C7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA2CEF6A27789A0D00F886C7 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FA2CEF6C2778A92400F886C7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FA2CEF6D2778F20500F886C7 /* RegularTableViewCell.swift */,
+				FA2CEF6F277903F400F886C7 /* CustomHeaderView.swift */,
+				FA2CEF71277BABEE00F886C7 /* MyCollectionViewCell.swift */,
+				FA2CEF76277BAE7700F886C7 /* CollectionTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FA2CEF75277BAC2300F886C7 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				FA2CEF72277BABEE00F886C7 /* MyCollectionViewCell.xib */,
+				FA2CEF77277BAE7700F886C7 /* CollectionTableViewCell.xib */,
+			);
+			path = Nibs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,8 +217,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA2CEF79277BAE7700F886C7 /* CollectionTableViewCell.xib in Resources */,
 				FA2CEF5C2777E44600F886C7 /* LaunchScreen.storyboard in Resources */,
 				FA2CEF592777E44600F886C7 /* Assets.xcassets in Resources */,
+				FA2CEF74277BABEF00F886C7 /* MyCollectionViewCell.xib in Resources */,
 				FA2CEF572777E44200F886C7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,8 +233,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA2CEF542777E44200F886C7 /* ViewController.swift in Sources */,
+				FA2CEF73277BABEF00F886C7 /* MyCollectionViewCell.swift in Sources */,
+				FA2CEF6E2778F20500F886C7 /* RegularTableViewCell.swift in Sources */,
 				FA2CEF502777E44200F886C7 /* AppDelegate.swift in Sources */,
 				FA2CEF522777E44200F886C7 /* SceneDelegate.swift in Sources */,
+				FA2CEF70277903F400F886C7 /* CustomHeaderView.swift in Sources */,
+				FA2CEF6B27789A0D00F886C7 /* Model.swift in Sources */,
+				FA2CEF78277BAE7700F886C7 /* CollectionTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +388,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 986NFG9Y4U;
-				INFOPLIST_FILE = iOSAlbumScreen/Info.plist;
+				INFOPLIST_FILE = iOSAlbumScreen/Resources/Configs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +407,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 986NFG9Y4U;
-				INFOPLIST_FILE = iOSAlbumScreen/Info.plist;
+				INFOPLIST_FILE = iOSAlbumScreen/Resources/Configs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
