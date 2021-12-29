@@ -1,10 +1,3 @@
-//
-//  CustomHeaderView.swift
-//  iOSAlbumScreen
-//
-//  Created by matt_spb on 26.12.2021.
-//
-
 import UIKit
 
 class CustomHeaderView: UITableViewHeaderFooterView {
@@ -36,17 +29,15 @@ class CustomHeaderView: UITableViewHeaderFooterView {
     }
 
     override func layoutSubviews() {
-        print("contentViewSize is \(contentViewSize)")
-        titleLabel.frame = CGRect(x: 7,
+        titleLabel.frame = CGRect(x: 16,
                                   y: 0,
                                   width: 200,
-                                  height: 40)
+                                  height: 30)
 
         detailButton.frame = CGRect(x: contentViewSize.width - 85,
                                     y: 0,
                                     width: 80,
-                                    height: 40)
-        print("detailButton frame is \(detailButton.frame)")
+                                    height: 30)
     }
 
     public func configure(with model: [String: String]) {
@@ -58,5 +49,4 @@ class CustomHeaderView: UITableViewHeaderFooterView {
         titleLabel.text = nil
         detailButton.setTitle(nil, for: .normal)
     }
-
 }

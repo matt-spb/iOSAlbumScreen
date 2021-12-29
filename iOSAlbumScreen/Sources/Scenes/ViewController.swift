@@ -1,21 +1,10 @@
-//
-//  ViewController.swift
-//  iOSAlbumScreen
-//
-//  Created by matt_spb on 26.12.2021.
-//
-
-// убрать сепаратор под хедером
-// свдинуть сепаратор ячеек до начала текста
-//поставить сердечко на ячейке favorites
-
 import UIKit
 
 class ViewController: UIViewController {
 
     @IBOutlet var table: UITableView!
 
-    var dataSource = Model(mediaTypes: [], utilities: [], sectionTitles: [])
+    var dataSource = Model()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +16,9 @@ class ViewController: UIViewController {
         table.delegate = self
         table.dataSource = self
         table.tableHeaderView = UIView()
-//        table.separatorColor = .clear
         table.register(CustomHeaderView.self, forHeaderFooterViewReuseIdentifier: CustomHeaderView.identifier)
         table.register(RegularTableViewCell.self, forCellReuseIdentifier: RegularTableViewCell.identifier)
+        table.register(CollectionTableViewCell.nib(), forCellReuseIdentifier: CollectionTableViewCell.identifier)
     }
 }
 
@@ -37,12 +26,14 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: CustomHeaderView.identifier) as! CustomHeaderView
         header.contentViewSize = tableView.tableHeaderView?.frame.size ?? CGSize()
-        header.configure(with: dataSource.sectionTitles[section])
+
+        let model = dataSource.sectionTitles[section]
+        header.configure(with: model)
         return header
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40
+        return 30
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -56,7 +47,16 @@ extension ViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
+        switch indexPath.section {
+            case 0:
+                return 570
+            case 1, 2:
+                return 280
+            case 3, 4:
+                return 44
+            default:
+                return 44
+        }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -73,13 +73,29 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         switch indexPath.section {
-            case 0: return UITableViewCell()
-            case 1: return UITableViewCell()
-            case 2: return UITableViewCell()
+            case 0:
+                let cell = tableView.dequeueReusableCell(withIdentifier: CollectionTableViewCell.identifier, for: indexPath) as! CollectionTableViewCell
+                let model = Model(myAlbums: dataSource.myAlbums, type: .myAlbums)
+                cell.configure(with : model)
+                return cell
+
+            case 1:
+                let cell = tableView.dequeueReusableCell(withIdentifier: CollectionTableViewCell.identifier, for: indexPath) as! CollectionTableViewCell
+                let model = Model(sharedAlbums: dataSource.sharedAlbums, type: .sharedAlbums)
+                cell.configure(with : model)
+                return cell
+
+            case 2:
+                let cell = tableView.dequeueReusableCell(withIdentifier: CollectionTableViewCell.identifier, for: indexPath) as! CollectionTableViewCell
+                let model = Model(peopleAndPlaces: dataSource.peopleAndPlaces, type: .peopleAndPlaces)
+                cell.configure(with : model)
+                return cell
+
             case 3:
                 let cell = tableView.dequeueReusableCell(withIdentifier: RegularTableViewCell.identifier, for: indexPath) as! RegularTableViewCell
                 cell.configure(with: dataSource.mediaTypes[indexPath.row])
                 return cell
+
             case 4:
                 let cell = tableView.dequeueReusableCell(withIdentifier: RegularTableViewCell.identifier, for: indexPath) as! RegularTableViewCell
                 cell.configure(with: dataSource.utilities[indexPath.row])
@@ -89,23 +105,14 @@ extension ViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        let contentView = cell.contentView
-//        if
-//            // this separator is subview of first UITableViewCell in section
-//            indexPath.row == 0,
-//            // truing to find it in subviews
-//            let divider = cell.subviews.filter({ $0.frame.minY == 0 && $0 !== contentView }).first
-//        {
-//            divider.isHidden = true
-//        }
-//        cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 30)
 
-//        if indexPath.row == 0 {
-//            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
-//        }
-    }
+        if indexPath.row == 0 {
+            let separator = cell.subviews.filter({
+                $0.frame.minY == 0 && $0 !== cell.contentView
+            }).first
+            separator?.isHidden = true
+        }
 
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-
+        cell.separatorInset = UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 0)
     }
 }
